@@ -20,6 +20,5 @@ class Player extends Character {
             case 3 -> skip();
             default -> System.out.println("incorrect choice. Try again.");
         }
-        //scanner.close();
     }
 }
