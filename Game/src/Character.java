@@ -68,12 +68,11 @@ abstract class Character {
         opponent.takeDamage(damage);
     }
 
-    public boolean chanceOfHit() {
+    public boolean chanceOfHit(Character player) {
         Random random = new Random();
 
-
         int chance = random.nextInt(20) + 1;
-        return chance >= 10;
+        return chance >= player.getArmorClass();
     }
 
     public void heal() {
