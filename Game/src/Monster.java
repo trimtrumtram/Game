@@ -7,11 +7,11 @@ class Monster extends Character {
     public void takeTurn(Character opponent) {
         int action = random.nextInt(3) + 1;
         if(action == 1) {
-            if(chanceOfHit()) {
-                System.out.println("\n" + getName() + " rolled more then 10" );
+            if(chanceOfHit(opponent)) {
+                System.out.println("\n" + getName() + " rolled more then " + opponent.getArmorClass());
                 attack(opponent);
             }else {
-                System.out.println("\n" + getName() + " rolled less then 10 and miss");
+                System.out.println("\n" + getName() + " rolled less then " + opponent.getArmorClass() + " and miss");
             }
         } else if (action == 2 && getHealth() < getMaxHealth()) {
             heal();
